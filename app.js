@@ -17,6 +17,23 @@ addBtn.addEventListener("click", () => {
   }
 });
 
+dltBtn.addEventListener("click", () => {
+  newUl.childElementCount > 0
+    ? newUl.removeChild(newUl.lastElementChild)
+    : alert("there is no item to delete");
+});
+
+// enter key event handler
+langInput.addEventListener("keydown", (event) => {
+  if (event.keyCode === 13) {
+    addBtn.click();
+  }
+
+  if (event.code === "Delete") {
+    dltBtn.click();
+  }
+});
+
 window.addEventListener("load", () => {
   langInput.focus();
 });
