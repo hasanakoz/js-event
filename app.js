@@ -11,6 +11,10 @@ langList.appendChild(newUl);
 addBtn.addEventListener("click", () => {
   if (!langInput.value) {
     alert("please enter a language");
+  } else if (langInput.value.toLowerCase() === "javascript") {
+    newUl.innerHTML += `<li>${langInput.value}</li>`;
+    newUl.style.color = "red";
+    langInput.value = "";
   } else {
     newUl.innerHTML += `<li>${langInput.value}</li>`;
     langInput.value = "";
